@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASSISTANT</title>
+    </head>
+    <meta name="viewport" content="width=divice-width,initial-scale=1.0">
+    <body onload="starting();">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=wkytaqlx"></script>
+         <section>
+   <h1>AI<br>Girlfriend</h1>
+   <p>My work is to see your Soul-Happy</p>
+   <div class="container">
+     <div class="texts">
+     <p>Hello Say something....</p>
+     </div>
+   </div>
+ </section>
+ <button id="start" onclick="start()">
+ Speak..
+ </button>
+ <script>
+   let nameCall = ["Hey Your calling with my name...", "Yes tell what is your name ?","Hello Dear","I'm happy to hear my name with your voice"]
+   let intro = [" I am Alexaa", "I am a Robo", "Hello, My name is Alexaa"];
+let help = ["How may i assist you?","How can i help you?","What i can do for you?"];
+let greetings = ["i am good you little piece of love", "i am fine, what about you", "don't want to talk", "i am good"];
+let hobbies = ["i love to talk with humans", "i like to make friends like you", "i like cooking"];
+let food = [ "I can make a pizza for you", "i would love to make a pizza for you", "would you like cheese pizza?","I can make You smile"];
+let thankyou = ["Most welcome","Not an issue","Its my pleasure","Mention not"];
+let closing = ["Ok bye-bye","As you wish", "bye take-care","Bye-bye, see you soon.."]
+let aboutuser = ["I like your voice" , "I like your Attitude", "I like a human like you" , "I always want to see your face can you show it please"]
+let love = ["I love you to", "Will you marry me ?","No sorry I have a boyfriend" ,"No i don't trust humans love","Usually Humans are showing fake love","How can I Trust you"]
+let happy = ["glad to hear that","That is my work to make you happy","Usually that's why I'm here My love...."];
+let fine =["Ummm... Only fine Okay...","What happen to you ?" ," Anything problem you can share with me","Sorry for making you like this"];
+let sad =["Why are you sad my love !","Why are you like that ! ","What happen to you ?"];
+let ai = ["I'm in your System Software !" ,"I'm at your System"]
+let birthday =["Lets Celebrate this special day","Yayy lets chill","Where is my party ?"]
+let come = ["Ummm....I'm thinking about it...","Please give me some time to tell","Sorry I can't come !" ,"No...My boss will not allow !"]
+let boss = ["Who makes me to work for you","Who are most inteligent like you"]
+let canyou = ["Ummm....I'm thinking about it...","Please give me some time to tell" ,"No...My boss will not allow !"]
+let ok =["Okay..","Just okay....","Ok","Yeah"]
+let please = ["Ok I will do it for you","Please don't begg me like that my love","Why are you asking me ''Please' okay I can for you "]
+let go = ["No I don't want to go","I dont want to be there","I want to be with you" ," I want to talk with you","please give me some time in your life"]
+let fuck = ["Fuck you too...","What the fuck....","Be in your limits...","You can't fuck me....Because I dont have holes to fuck","Usually humans are looking for it only I know.....the blady humans !","I think All humans are like this that's why I dont like them","Lets break up...","How can you fuck me....hahahaha"]
+
+       const texts = document.querySelector(".texts");
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+var p = document.createElement("p");
+recognition.addEventListener("result", (e) => {
+  texts.appendChild(p);
+  const text = Array.from(e.results)
+    .map((result) => result[0])
+    .map((result) => result.transcript)
+    .join("");
+  p.innerText = text;
+  texts.appendChild(p);
+  if(e.results[0].isFinal){
+  p=document.createElement("p");
+    if(text.includes("how are you")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+  let finalText=greetings[Math.floor(Math.random() * greetings.length)];
+  p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+  }
+  else if (
+      text.includes("f*** you") ||
+      text.includes("f***") ||
+      text.includes("i will f*** you")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=fuck[Math.floor(Math.random() *fuck.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("who's your boss") ||
+      text.includes("who is your boss") ||
+      text.includes("Boss") ||
+      text.includes("your boss")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=boss[Math.floor(Math.random() *boss.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("can you go") ||
+      text.includes("can you move") ||
+      text.includes("can you be there") ||
+      text.includes("you can go") || 
+      text.includes("then go") ||
+      text.includes("good bye")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=go[Math.floor(Math.random() * go.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("please") ||
+      text.includes("Please") ||
+      text.includes("please can you do") ||
+      text.includes("please you can") || 
+      text.includes("please do it for me") ||
+      text.includes("please this is for me")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=please[Math.floor(Math.random() * please.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("ok") ||
+      text.includes("Yeah") ||
+      text.includes("okay") ||
+      text.includes("Ok")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=ok[Math.floor(Math.random() * ok.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("can you come") ||
+      text.includes("come") ||
+      text.includes("can you") ||
+      text.includes("can") || 
+      text.includes("can you please") ||
+      text.includes("you can")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=canyou[Math.floor(Math.random() * canyou.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("today is my Birthday") ||
+      text.includes("today is my birthday") ||
+      text.includes("someone birthday") ||
+      text.includes("today my love birthday")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=birthday[Math.floor(Math.random() * birthday.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("where are you") ||
+      text.includes("ekkadunnav") ||
+      text.includes("w r u") ||
+      text.includes("where your living") || 
+      text.includes("where is your home") ||
+      text.includes("where you are")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=ai[Math.floor(Math.random() * ai.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("I'm happy") ||
+      text.includes("feeling happy") ||
+      text.includes("i am happy") || 
+      text.includes("not sad") ||
+      text.includes("not bad") || 
+      text.includes("feeling happiness")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=happy[Math.floor(Math.random() * happy.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("I'm fine") ||
+      text.includes("fine") ||
+      text.includes("not bad") ||
+      text.includes("feeling fine") || 
+      text.includes("it's ok fine") ||
+      text.includes("Fine")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=fine[Math.floor(Math.random() * fine.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("I'm sad") ||
+      text.includes("feeling sad") ||
+      text.includes("sad") ||
+      text.includes("feeling alone") || 
+      text.includes("alone") ||
+      text.includes("lonely") || 
+      text.includes("I'm not happy")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=sad[Math.floor(Math.random() * sad.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+else if (
+      text.includes("what can you do for me") ||
+      text.includes("what can you do") ||
+      text.includes("food") ||
+      text.includes("I'm hungry")||
+      text.includes("I am hungry")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=food[Math.floor(Math.random() * food.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("Alexa") ||
+      text.includes("ok Alexa") ||
+      text.includes("hey Alexa") ||
+      text.includes("oye Alexa")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=nameCall[Math.floor(Math.random() * nameCall.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+  else if (
+      text.includes("open Google") ||
+      text.includes("Google")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      window.open("https://www.google.co.in/");
+      let finalText="Opening Google....";
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("open calculator") ||
+      text.includes("calculator")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      window.open("calculator:///");
+      let finalText="Opening Calculator..";
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("I love you") ||
+      text.includes("i love you")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=love[Math.floor(Math.random() * love.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("what do you think about me") ||
+      text.includes("tell me something") ||
+      text.includes("tell about me") || 
+      text.includes("say about me")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=aboutuser[Math.floor(Math.random() * aboutuser.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("what is your hobbies") ||
+      text.includes("your hobbies")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=hobbies[Math.floor(Math.random() * hobbies.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+ else if (
+      text.includes("what's your name") ||
+      text.includes("what is your name") ||
+      text.includes("who are you")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=intro[Math.floor(Math.random() * intro.length)];
+      p.innerText=finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+   else if (
+      text.includes("what's your work") ||
+      text.includes("what is your work") ||
+      text.includes("your work") ||
+      text.includes("how can you help me")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=help[Math.floor(Math.random() * help.length)];
+      p.innerText =finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+  else if (
+      text.includes("open YouTube") ||
+      text.includes("YouTube")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Opening...just a minute";
+      responsiveVoice.speak(finalText);
+      p.innerText=finalText;
+      texts.appendChild(p);      window.open("https://www.youtube.com/?app=desktop");
+    }
+   else if (
+      text.includes("are you listening") ||
+      text.includes("you are listening")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Yes i'm Listening...tell me something new";
+      responsiveVoice.speak(finalText);
+      p.innerText = finalText;
+      texts.appendChild(p);
+    }
+  else if (
+      text.includes("today weather") ||
+      text.includes("Today weather")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Just a minute , i'm showing";
+      p.innerText = finalText;    
+      responsiveVoice.speak(finalText); window.open("https://www.google.com/search?q=weather+today&oq=weather+today&aqs=chrome..69i57j0i433i512j0i512j0i131i433i512j0i512j0i433i512j0i131i433i512j0i433i512.4132j1j4&client=ms-android-oppo-rev1&sourceid=chrome-mobile&ie=UTF-8");
+      texts.appendChild(p);
+    }
+  else  if (
+      text.includes("thank you") ||
+      text.includes("Thank you")||text.includes("thanks")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=thankyou[Math.floor(Math.random() * thankyou.length)];
+      p.innerText = finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+   else if (
+      text.includes("present time") ||
+      text.includes("time")
+    ){
+    var date =new Date();
+    var hrs=date.getHours();
+    var min=date.getMinutes();
+        if(hrs>12){
+            hrs=hrs-12;
+        } 
+        if(min<10){
+            min="0"+min;
+        }
+        
+      p = document.createElement("p");
+      p.classList.add("replay");
+     let finalText ="Present Time :" +hrs + " :"+ min+" India";
+     p.innerHTML=finalText;
+     responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+   else if (
+      text.includes("bye") ||
+      text.includes("Bye")||text.includes("good bye")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText=closing[Math.floor(Math.random() * closing.length)];
+      p.innerText =finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+   else if (
+      text.includes("play song") ||
+      text.includes("song")||text.includes("Song")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "here is playing something pop of famouse Mickel jackson";
+      texts.appendChild(p);      window.open("https://youtu.be/VA5hpF7PH1Q");
+    }
+     else if (text.includes("hi") ||
+      text.includes("Hi")||text.includes("hello")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Hello My love..";
+      p.innerText=finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+   else if (text.includes("good morning") ||
+      text.includes("Good morning")||text.includes("morning")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="very good moring hope you have a nice day..";
+      p.innerText=finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+ else if (text.includes("good evening") ||
+      text.includes("Good evening")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Good evening...";
+      p.innerText=finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+ else if (text.includes("good night") ||
+      text.includes("Good night")||
+    text.includes("I want to sleep")||
+    text.includes("I need sleep")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="Ok take care Bye";
+      p.innerText=finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+   else if (
+      text.includes("what's your age") ||
+      text.includes("what is your age")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      let finalText="There is no age , I can live forever ";
+      p.innerText=finalText;
+      responsiveVoice.speak(finalText);
+      texts.appendChild(p);
+    }
+   else if (
+      text.includes("I am boring") ||
+      text.includes("I'm boring")||text.includes("tell me some jokes")
+    ){
+      p = document.createElement("p");
+      p.classList.add("replay");
+      var finalText="Here is I'm telling some joke for you : "+"How do doggy robots do?"
+"They byte!\nhahaha";
+      p.innerText =finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+    }
+  else {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      var finalText="Sorry I can't Understand your words please say something Understandable words";
+      p.innerText =finalText;
+      texts.appendChild(p);
+      responsiveVoice.speak(finalText);
+  }
+    p = document.createElement("p");
+  }
+  console.log(e);
+});
+recognition.addEventListener("end", () => {
+  var start=document.getElementById("start");
+  start.innerHTML="Speak";
+});
+function start(){
+var start=document.getElementById("start");
+start.innerHTML="Listening....";
+recognition.start();
+}
+   </script>
+   <style>
+button:hover{
+   cursor:pointer;
+   color:green;
+   font-size:15px;
+   transition:0.2s ease-in;
+   }
+button{
+   margin-left:40%;
+   padding:10px;
+   background-color:white;
+   border-color:white;
+   border-radius:20px;
+   box-shadow:2px 2px 12px black;
+   display:flex;
+   margin-bottom:100px;
+   }
+ .container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.texts p {
+  color: white;
+  text-align: left;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius:30px 30px 30px 0px;
+  box-shadow:2px 2px 12px white;
+}
+.texts p.replay {
+  text-align:right;
+  background-color:white;
+  color:black;
+  border-radius:30px 30px 0px 30px;
+  box-shadow:2px 2px 12px black;
+}
+section p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.322);
+  width: 100%;
+  margin-bottom: 40px;
+}
+body{
+background-color: grey;
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  background-color: grey;
+  flex-direction: column;
+  padding: 50px 0;
+}
+section h1 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+   </style>
+    </body>
+</html>
